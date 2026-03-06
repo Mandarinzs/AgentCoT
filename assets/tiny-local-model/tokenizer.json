@@ -1,0 +1,85 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "[PAD]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "[UNK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "[BOS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "[EOS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": null,
+  "pre_tokenizer": {
+    "type": "Whitespace"
+  },
+  "post_processor": null,
+  "decoder": null,
+  "model": {
+    "type": "WordLevel",
+    "vocab": {
+      "[PAD]": 0,
+      "[UNK]": 1,
+      "[BOS]": 2,
+      "[EOS]": 3,
+      ":": 4,
+      "。": 5,
+      "答案": 6,
+      "问题": 7,
+      "、": 8,
+      "，": 9,
+      "14寸轻薄本通常更均衡": 10,
+      "优先放在户型中心开阔位置": 11,
+      "优先考虑续航": 12,
+      "减少遮挡提升覆盖": 13,
+      "噪音和手感更平衡": 14,
+      "学生党机械键盘轴体怎么选": 15,
+      "家用路由器放客厅还是书房": 16,
+      "建议选择佩戴稳固": 17,
+      "我想买一台轻薄办公笔记本": 18,
+      "推荐一款适合夜跑的耳机": 19,
+      "支持快充且有过充保护的型号": 20,
+      "日常学习建议先试茶轴或红轴": 21,
+      "给老人买智能手表需要看什么": 22,
+      "跌倒检测和续航能力": 23,
+      "选择10000mAh": 24,
+      "通勤用充电宝怎么选": 25,
+      "重点看大字体显示": 26,
+      "重量和键盘手感": 27,
+      "防汗并支持环境音模式的蓝牙耳机": 28,
+      "预算200元以内": 29
+    },
+    "unk_token": "[UNK]"
+  }
+}

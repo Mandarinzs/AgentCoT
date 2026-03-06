@@ -1,5 +1,6 @@
 learning_rate: 2.0e-5
-num_epochs: 3
-batch_size: 4
+num_epochs: 1
+batch_size: 2
+max_length: 128
 max_grad_norm: 1.0
 output_dir: outputs/agentcot
