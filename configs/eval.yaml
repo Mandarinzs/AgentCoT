@@ -1,0 +1,6 @@
+k: 5
+compute_fairness: true
+metrics:
+  - hit_rate@5
+  - demographic_parity_gap
+  - equal_opportunity_gap
