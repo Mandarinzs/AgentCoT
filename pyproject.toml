@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentcot"
+version = "0.1.0"
+description = "AgentCoT baseline framework for recommendation QA with fairness-aware training"
+requires-python = ">=3.10"
+dependencies = [
+  "torch==2.2.2",
+  "transformers==4.39.3",
+  "accelerate==0.28.0",
+  "datasets==2.18.0",
+  "modelscope==1.12.0",
+  "pyyaml==6.0.1",
+  "numpy==1.26.4",
+  "scikit-learn==1.4.1.post1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.1.1",
+  "ruff==0.3.4",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

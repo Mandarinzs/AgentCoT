@@ -1,0 +1,5 @@
+train_file: data/train.jsonl
+cache_dir: .cache/agentcot
+train_ratio: 0.8
+val_ratio: 0.1
+seed: 42
