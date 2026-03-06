@@ -1,0 +1,33 @@
+meta:
+  objective: "确认关键模块对性能与公平性的边际贡献"
+  baseline_tag: "full_system"
+baseline:
+  use_cot: true
+  fairness_regularization: true
+  group_reweighting: true
+  cache_dataset: true
+ablations:
+  - id: "remove_cot"
+    change:
+      use_cot: false
+    hypothesis: "无CoT时回答质量下降，但训练吞吐提升"
+    expected_risk: "high"
+  - id: "remove_regularization"
+    change:
+      fairness_regularization: false
+    hypothesis: "公平性指标恶化，质量可能略微提升"
+    expected_risk: "medium"
+  - id: "remove_reweighting"
+    change:
+      group_reweighting: false
+    hypothesis: "长尾群体指标恶化"
+    expected_risk: "medium"
+  - id: "remove_cache"
+    change:
+      cache_dataset: false
+    hypothesis: "训练质量不变，端到端耗时增加"
+    expected_risk: "low"
+execution:
+  repeats_per_setting: 3
+  confidence_interval: 0.95
+  report_template: "reports/ablation_report.md"

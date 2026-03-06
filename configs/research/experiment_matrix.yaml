@@ -1,0 +1,40 @@
+meta:
+  owner: "ml-team"
+  objective: "在精度与公平性之间找到可部署的最优平衡点"
+  execution_mode: "server-ready"
+  default_train_script: "bash scripts/train.sh"
+  default_eval_script: "bash scripts/eval.sh"
+axes:
+  model:
+    - id: "qwen2-7b"
+      model_config: "configs/model.yaml"
+    - id: "qwen2-1.5b"
+      model_config: "configs/model.yaml"
+  fairness_strategy:
+    - id: "none"
+      lambda_fair: 0.0
+      reweighting: false
+    - id: "regularization"
+      lambda_fair: 0.2
+      reweighting: false
+    - id: "reweighting"
+      lambda_fair: 0.0
+      reweighting: true
+    - id: "hybrid"
+      lambda_fair: 0.2
+      reweighting: true
+  learning_rate:
+    - 2.0e-5
+    - 1.0e-5
+  seed:
+    - 42
+    - 3407
+runbook:
+  scheduler: "sequential"
+  max_parallel_jobs: 2
+  stop_on_failure: false
+  artifact_dir: "artifacts/experiment_matrix"
+success_criteria:
+  min_quality_score: 0.72
+  max_demographic_parity_gap: 0.08
+  max_equalized_odds_gap: 0.1

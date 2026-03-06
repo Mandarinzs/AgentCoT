@@ -1,0 +1,31 @@
+meta:
+  objective: "恢复联网后进行广泛调研并回灌实验设计"
+  owner: "research-ops"
+categories:
+  - name: "学术论文与技术报告"
+    checklist:
+      - "检索 ACL/NeurIPS/ICML 最近2年公平推荐与RAG评测论文"
+      - "追踪 arXiv 新论文并按任务/评测维度分类"
+      - "整理可复现实验设置与开源仓库链接"
+  - name: "工业实践与开源社区"
+    checklist:
+      - "扫描 Hugging Face / GitHub 热门公平训练项目"
+      - "收集生产级线上监控与回滚方案"
+      - "汇总许可证与商用限制"
+  - name: "数据与评测基准"
+    checklist:
+      - "补充多群体分层数据集并验证标注一致性"
+      - "建立统一 fairness + quality 指标映射表"
+      - "识别与现网场景最相近的基准任务"
+  - name: "安全合规"
+    checklist:
+      - "检查各区域隐私与推荐算法监管要求"
+      - "定义敏感属性最小化采集策略"
+      - "补齐模型卡和数据卡"
+output_requirements:
+  report_path: "reports/network_research_report.md"
+  include_sections:
+    - "趋势综述"
+    - "可落地候选方案Top10"
+    - "对现有实验矩阵的增量建议"
+  sla_hours: 48
