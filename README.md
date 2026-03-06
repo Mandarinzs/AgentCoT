@@ -78,3 +78,7 @@ pytest -q
 - `src/agentcot/fairness`: fairness metrics, regularization, and group reweighting.
 - `src/agentcot/trainer`: minimal `accelerate`-based training/validation loop.
 - `src/agentcot/eval`: recommendation QA quality + fairness joint metrics.
+
+## Top-Conference Planning
+
+See `docs/top_conference_strategy.md` for an innovation-focused research plan (including a 3-point novelty design and experiment matrix).
