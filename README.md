@@ -71,6 +71,27 @@ python -m agentcot.cli.eval --model-config configs/model.yaml --data-config conf
 pytest -q
 ```
 
+### 6) Server-ready Research Planning Bundle
+
+The following deployable planning assets are versioned under `configs/research/`:
+
+- `experiment_matrix.yaml`: experiment matrix for model/fairness/hyperparameter combinations.
+- `ablation_plan.yaml`: ablation setup and hypotheses.
+- `phased_rollout.yaml`: phased production rollout gates and rollback policies.
+- `post_network_research_checklist.yaml`: broad research checklist to execute after network access is restored.
+
+Export all plans into one JSON bundle for server-side orchestration:
+
+```bash
+bash scripts/export_research_plan.sh
+```
+
+Or print directly:
+
+```bash
+python -m agentcot.cli.research_plan --repo-root .
+```
+
 ## Notes
 
 - `src/agentcot/data`: reading, splitting, caching.

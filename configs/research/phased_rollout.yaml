@@ -1,0 +1,43 @@
+meta:
+  objective: "分阶段上线公平推荐问答模型，降低回滚风险"
+phases:
+  - phase: 0
+    name: "离线验证"
+    gate:
+      min_samples: 5000
+      min_quality_score: 0.72
+      max_demographic_parity_gap: 0.08
+    deliverables:
+      - "离线评测报告"
+      - "风险登记表"
+    rollback: "停止进入灰度阶段并触发误差归因"
+  - phase: 1
+    name: "小流量灰度(1%)"
+    gate:
+      min_online_hours: 24
+      max_complaint_rate: 0.02
+      max_fairness_alerts: 2
+    deliverables:
+      - "线上监控看板截图"
+      - "灰度复盘结论"
+    rollback: "回切旧模型并冻结新实验"
+  - phase: 2
+    name: "扩大流量(10%-30%)"
+    gate:
+      min_online_hours: 72
+      min_ctr_lift: 0.01
+      max_demographic_parity_gap: 0.1
+    deliverables:
+      - "阶段性收益分析"
+      - "公平性波动复盘"
+    rollback: "退回1%灰度并重新调参"
+  - phase: 3
+    name: "全量发布"
+    gate:
+      min_online_days: 7
+      max_sev_incident: 0
+      max_equalized_odds_gap: 0.12
+    deliverables:
+      - "发布公告"
+      - "运营值守手册"
+    rollback: "切回稳定快照并启动事故流程"
