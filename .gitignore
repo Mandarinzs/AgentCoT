@@ -1,3 +1,8 @@
 __pycache__/
 *.py[cod]
 .venv/
+
+# runtime artifacts
+.cache/
+outputs/
+assets/tiny-local-model/model.safetensors

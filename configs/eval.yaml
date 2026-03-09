@@ -1,5 +1,9 @@
 k: 5
 compute_fairness: true
+batch_size: 2
+max_length: 128
+max_new_tokens: 32
+output_dir: outputs/agentcot
 metrics:
   - hit_rate@5
   - demographic_parity_gap
