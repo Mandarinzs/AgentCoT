@@ -57,6 +57,8 @@ pip install -e .[dev]
 bash scripts/train.sh
 ```
 
+`configs/train.yaml` now supports an `auto_tune` section that repeatedly tries hyper-parameter combinations and early-stops once the configured SOTA threshold is reached.
+
 ### 4) Evaluation
 
 ```bash
