@@ -1,4 +1,4 @@
-provider: hf
-model_name_or_path: /path/to/local-or-hf-model
-tokenizer_name_or_path: /path/to/local-or-hf-model
+provider: modelscope
+model_name_or_path: Qwen2.5-7B
+tokenizer_name_or_path: Qwen2.5-7B
 trust_remote_code: true
