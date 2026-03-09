@@ -9,7 +9,7 @@ description = "AgentCoT baseline framework for recommendation QA with fairness-a
 requires-python = ">=3.10"
 dependencies = [
   "torch==2.2.2",
-  "transformers==4.39.3",
+  "transformers==4.53.0",
   "accelerate==0.28.0",
   "datasets==2.18.0",
   "modelscope==1.12.0",
